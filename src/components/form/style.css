@@ -1,0 +1,42 @@
+.form {
+  height: 100px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 12px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+input {
+  height: 40px;
+  width: 240px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 12px;
+  margin-right: 30px;
+}
+
+label {
+  margin-right: 30px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.add-button {
+  background-color: teal;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  height: 40px;
+  width: 140px;
+  cursor: pointer;
+}
