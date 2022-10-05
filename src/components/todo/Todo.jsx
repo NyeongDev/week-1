@@ -1,37 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 
 function Todo(props) {
-  console.log("@프롭스@", props.title);
+  const { id, title, desc, isDone } = props;
+  const handleDelete = props.handleDelete;
+  const handleIsDone = props.handleIsDone;
   return (
-    <div className="todo">
-      <h2>Working.. 🔥</h2>
+    <>
       <div className="todo-item">
-        <h2>{props.title}</h2>
-        <div>{props.desc}</div>
+        <h2>{title}</h2>
+        <div>{desc}</div>
         <div className="btn-container">
-          <button className="delete-btn">삭제하기</button>
-          <button className="complete-btn">완료</button>
+          <button onClick={() => handleDelete(id)} className="delete-btn">
+            삭제
+          </button>
+          <button
+            onClick={() => {
+              handleIsDone(id);
+            }}
+            className={isDone ? "cancel-btn" : "complete-btn"}
+          >
+            {isDone ? "취소" : "완료"}
+          </button>
         </div>
       </div>
-      <div className="todo-item">
-        <h2>{}</h2>
-        <div>{}</div>
-        <div className="btn-container">
-          <button className="delete-btn">삭제하기</button>
-          <button className="complete-btn">완료</button>
-        </div>
-      </div>
-      <h2>Done..! 🎉</h2>
-      <div className="todo-item">
-        <h2>리액트 공부하기</h2>
-        <div>리액트 기초를 공부해봅시다.</div>
-        <div className="btn-container">
-          <button className="delete-btn">삭제하기</button>
-          <button className="complete-btn">완료</button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
